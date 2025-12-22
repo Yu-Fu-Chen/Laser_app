@@ -1,0 +1,9 @@
+Log 建立於 2025/12/01
+LD Test started
+[2025-12-01 15:29:23.855] ERROR: 無法解析功率回覆
+[2025-12-01 15:29:24.173] RX: sdac10
+[2025-12-01 15:29:24.177] RX: command= sdac10
+[2025-12-01 15:29:24.184] RX: Password is not correct, UART is not ready
+[2025-12-01 15:29:24.517] RX: sdac20
+[2025-12-01 15:29:24.521] RX: command= sdac20
+[2025-12-01 15:29:24.527] RX: Password is not correct, UART is not ready

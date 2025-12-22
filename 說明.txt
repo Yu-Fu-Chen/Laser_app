@@ -1,0 +1,20 @@
+# LaserGUI v2 — 使用 Qt Designer 的 .ui 版本（Qt6 Widgets / TCP + Serial/RS‑232）
+# 內容包含 5 個檔：
+#   1) CMakeLists.txt
+#   2) main.cpp           （每一行皆有中文註解）
+#   3) MainWindow.h       （每一行皆有中文註解）
+#   4) MainWindow.cpp     （每一行皆有中文註解）
+#   5) MainWindow.ui      （Qt Designer 產生之 .ui，物件名稱與程式碼對應）
+#
+# 功能：
+#  - TCP 或 Serial 模式切換（QTabWidget）
+#  - TCP：Host / Port
+#  - Serial：Port / Baud / Parity / DataBits / StopBits（自動列出可用埠）
+#  - Connect/Disconnect 按鈕 + 狀態標示
+#  - Power ON / Power OFF / START 按鈕
+#  - 三組功率控制（150~1500）：Slider + SpinBox，送出 SET L<N> <value>\n
+#  - 命令輸入框＋送出按鈕
+#  - TX/RX 日誌（時間戳），支援 RX 十六進位顯示、清除、存檔
+#  - protocol 結尾集中於 applyProtocol()（預設 "\n"，可改 "\r\n"）
+#
+# 建置指引：與 v1 相同，AUTOUIC 已開啟，會自動由 .ui 生成 ui_MainWindow.h

@@ -1,0 +1,429 @@
+/* ===============================
+   LaserGUI QSS Theme
+   - (A) 按鈕、GroupBox 樣式統一
+   - (B) TabWidget 現代深色樣式
+   - (C) Power 數值顯示 LED 風格
+   =============================== */
+
+/* 全域背景與文字顏色 */
+QMainWindow#MainWindow {
+    background: #20242b;
+    color: #f0f0f0;
+    border: 1px solid #8e9197;
+}
+
+QWidget#Login,
+QWidget#Simulation,
+QWidget#StressTesting{
+    background: #20242b;
+    color: #f0f0f0;
+    border: 1px solid #8e9197;
+}
+
+
+QLabel{
+    color: #f0f0f0;
+    padding: 0px 2px;
+    margin-right: 2px;
+}
+
+QMenuBar {
+    background-color: #34495e;   /* 背景顏色 */
+}
+QMenuBar::separator {
+    height: 2px;
+    background: #7f8c8d;
+    margin: 4px 10px;
+}
+QMenuBar::item {
+    background: #3b4252;     /* 項目背景透明 */
+    border: 1px solid #4c566a;
+    border--radius: 2px;
+    margin: 3px 2px;
+    padding: 6px 10px;           /* 項目內距 */
+    color: white;
+}
+QMenuBar::item:selected {
+    background: #34495e;         /* 滑鼠移過去的顏色 */
+}
+QMenuBar::item:pressed {
+    background: #5e81ac;         /* 按下去的顏色 */
+}
+QMenu{
+    background-color: #34495e;
+    border: 1px solid #7f8c8d;
+}
+QMenu::item {
+    padding: 6px 10px;
+    background-color: transparent;
+    border: 1px solid #1b1f26;
+    color: white;
+}
+QMenu::item:selected {
+    background-color: #3498db;
+}
+
+QToolButton {
+        background-color: #3b4252;
+        color: white;
+        border: 1px solid #4c566a;
+        border-radius: 2px;
+        margin: 2px 2px;   /* 每個按鈕留空部分 */
+        padding: 2px 6px;
+    }
+    QToolButton:hover {
+        background-color: #2e3440;
+    }
+    QToolButton:pressed {
+        background-color: #4c566a;
+    }
+
+QMessageBox {
+    background: #3b4252;
+    border: 1px solid #8e9197;
+    padding: 0px 2px;
+    margin-left: 0px;
+}
+QMessageBox QLabel {
+    color: white;
+}
+
+/* === GroupBox 統一樣式 === */
+QGroupBox {
+
+    margin-top: 6px; /* 留出空間給標題 */
+    padding-top:24px;
+     /* 邊框 + 內凹效果 */
+    border: 2px solid rgba(7, 4, 8, 1);
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.8); /* （QSS 不能直接做複雜陰影，保留用於解釋） */
+
+    
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 4px 4px;
+    margin-right: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #3b4252;
+    color: #d8dee9;
+    font-weight: 600;
+}
+
+/* === TabWidget 現代深色樣式 === */
+QTabWidget::pane {
+    border: 1px solid #3b4252;
+    border-radius: 6px;
+    background: #2e3440;
+}
+
+/* TabBar：扁平 + 底部高亮的選取狀態 */
+QTabBar::tab {
+    background: #3b4252;
+    color: #d8dee9;
+    padding: 6px 14px;
+    margin-right: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+QTabBar::tab:selected {
+    background: #5e81ac;
+    color: #eceff4;
+    border-bottom: 2px solid #88c0d0;
+}
+QTabBar::tab:hover {
+    background: #4c566a;
+}
+
+/* === 一般按鈕統一樣式 === */
+QPushButton {
+    background-color: #3b4252;
+    color: #eceff4;
+    border: 1px solid #4c566a;
+    border-radius: 4px;
+    padding: 4px 10px;
+}
+QPushButton:hover {
+    background-color: #4c566a;
+}
+QPushButton:pressed {
+    background-color: #2e3440;
+}
+
+/* 主要功能按鈕：Connect / Send 可以視需要另外調色 */
+QPushButton#btnConnect,
+QPushButton#btnSendCmd {
+    font-weight: 600;
+}
+
+/* === 特殊功能按鈕：Power ON / OFF / START === */
+QPushButton#btnPowerOn {
+    background-color: #2e7d32;
+    border-color: #1b5e20;
+}
+QPushButton#btnPowerOn:hover {
+    background-color: #388e3c;
+}
+QPushButton#btnPowerOn:pressed {
+    background-color: #1b5e20;
+}
+
+QPushButton#btnPowerOff {
+    background-color: #c62828;
+    border-color: #8e0000;
+}
+QPushButton#btnPowerOff:hover {
+    background-color: #d32f2f;
+}
+QPushButton#btnPowerOff:pressed {
+    background-color: #8e0000;
+}
+
+QPushButton#btnPStart {
+    background-color: #1565c0;
+    border-color: #0d47a1;
+}
+QPushButton#btnStart:hover {
+    background-color: #1976d2;
+}
+QPushButton#btnStart:pressed {
+    background-color: #0d47a1;
+}
+
+QPushButton:disabled {
+    background-color: #b0bec5;   /* 淺灰藍，表示不可用 */
+    border: 1px solid #90a4ae;   /* 邊框也變淡 */
+    color: #eceff1;              /* 字體變淡 */
+}
+
+/* === Slider 統一樣式 === */
+QSlider::groove:horizontal {
+    height: 6px;
+    background: #3b4252;
+    border-radius: 3px;
+}
+QSlider::handle:horizontal {
+    background: #88c0d0;
+    width: 14px;
+    margin: -4px 0;
+    border-radius: 7px;
+}
+
+/* === SpinBox 一般樣式 === */
+QSpinBox {
+    background: #2e3440;
+    color: #eceff4;
+    border: 1px solid #4c566a;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+QDoubleSpinBox {
+    background: #2e3440;
+    color: #eceff4;
+    border: 1px solid #4c566a;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+/* === (C) Power 數值顯示 LED 風格 === */
+/* Laser 1/2/3 的 GroupBox 背景略深，當作 Power Panel */
+QFrame#frame_SDAC1,
+QFrame#frame_SDAC2,
+QFrame#frame_SDAC3 {
+    background: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #151820,
+        stop:1 #1b1f26
+    );
+    border: 4px solid #4c566a;
+    padding: 2px 2px;
+}
+
+/* 這三組內的 SpinBox 做成黑底綠字類「LED 顯示」 */
+QFrame#frame_SDAC1 QSpinBox,
+QFrame#frame_SDAC2 QSpinBox,
+QFrame#frame_SDAC3 QSpinBox {
+    background: #2e3440;
+    color: #9cff57;
+    border: 1px solid #00ff88;
+    border-radius: 4px;
+    padding: 2px 2px;
+    font-family: Consolas, "Courier New", monospace;
+    font-weight: 600;
+}
+
+QFrame#frame_SDAC1 QSpinBox::up-button,
+QFrame#frame_SDAC2 QSpinBox::up-button,
+QFrame#frame_SDAC3 QSpinBox::up-button{
+    right:6px;
+}
+
+QFrame#frame_SDAC1 QSpinBox::down-button,
+QFrame#frame_SDAC2 QSpinBox::down-button,
+QFrame#frame_SDAC3 QSpinBox::down-button{
+    right:6px;
+}
+
+/* 這三組內的 Slider 改成亮綠色軌道與把手 */
+QFrame#frame_SDAC1 QSlider::groove:horizontal,
+QFrame#frame_SDAC2 QSlider::groove:horizontal,
+QFrame#frame_SDAC3 QSlider::groove:horizontal {
+    background: #005f39;
+}
+QFrame#frame_SDAC1 QSlider::handle:horizontal,
+QFrame#frame_SDAC2 QSlider::handle:horizontal,
+QFrame#frame_SDAC3 QSlider::handle:horizontal {
+    background: #00ff88;
+}
+
+/* === 命令輸入框 === */
+QLineEdit#leCmd {
+    background: #2e3440;
+    color: #eceff4;
+    border: 1px solid #4c566a;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+QComboBox{
+    background: #2b303b;
+    color: #eceff4;
+    border: 1px solid #4c566a;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+/* 一般 QLineEdit（如果你的 UI 還有其它輸入框） */
+QLineEdit {
+    background: #2b303b;
+    color: #eceff4;
+    border: 1px solid #4c566a;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+/* === Log 視窗 === */
+QTextEdit#teLog {
+    background: #20242b;
+    color: #e5e9f0;
+    border: 1px solid #3b4252;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 11pt;
+}
+
+/* === CheckBox / Label 等一般小元件 === */
+QCheckBox {
+    color: #e5e9f0;
+    spacing: 4px;
+}
+
+/* 適用於標示為 LED 的 QLabel，例如你可以 setProperty("led", true) 或用 objectName 選取 */
+QFrame#frame_LaserMeter,
+#frame_LaserMeter_2,
+#frame_ThorMeter,
+#frame_ThorMeter_2
+{
+     /* 邊框 + 內凹效果 */
+    border: 3px solid rgba(0, 255, 102, 0.53);       /* 邊框寬度、樣式與顏色 */
+    border-radius: 6px;              /* 邊角圓弧半徑 */
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.8); /* （QSS 不能直接做複雜陰影，保留用於解釋） */
+}
+QLabel[led="true"],
+QFrame#frame_LaserMeter QLabel,
+#frame_LaserMeter_2 QLabel,
+#frame_ThorMeter QLabel,
+#frame_ThorMeter_2 QLabel{
+    /* 背景與文字 */
+    
+    color: #00ff66;                  /* 綠色霓虹字 */
+    font-weight: 700;                /* 超粗（視字型支援） */   
+}
+
+/* 內外發光（使用多層文字陰影模擬霓虹）*/
+QLabel[led="true"]::before { /* Qt QSS 沒有 ::before，但保留為示意；用 text-shadow 在實作中模擬 */
+}
+
+/* 針對不同尺寸微調（可選） */
+QLabel[led="true"] {
+    font-size: 32pt;   /* 設計時基準，可用 resizeEvent 動態縮放 */
+}
+
+/* 更強的霓虹外發光（當 QLabel 有 focus 或狀態為 active 時）*/
+QLabel[led="true"]:hover {
+    color: #b7ffcd;
+    border-color: rgba(0,255,102,0.25);
+    /* 若要更強的 glow，請用 QGraphicsDropShadowEffect 在程式中套用 */
+}
+
+/* === 連線狀態 LED：預設灰色 OFF 狀態 === */
+QLabel#lbStatusLed {
+    background-color: #4c566a;
+    border-radius: 8px;   /* 半徑 = 寬/高的一半，變成圓形 */
+    border: 1px solid #2e3440;
+}
+
+/* 自動化程序的 styleSheet */
+
+/* 自動啟動：綠色，大字體 */
+QPushButton#btnPStart {
+    background-color: #2e7d32;
+    border: 2px solid #1b5e20;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 15px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+QPushButton#btnPStart:hover {
+    background-color: #388e3c;
+}
+
+QPushButton#btnPStart:pressed {
+    background-color: #1b5e20;
+}
+
+/* 暫停 / 停止：黃色（提醒用，非急停） */
+QPushButton#btnPStop {
+    background-color: #fbc02d;
+    border: 2px solid #f9a825;   /* ⚠ 原本這行少了分號，這裡補上 */
+    color: white;
+    border-radius: 10px;
+    padding: 8px 15px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+QPushButton#btnPStop:hover {
+    background-color: #ffeb3b;
+}
+
+QPushButton#btnPStop:pressed {
+    background-color: #f9a825;
+}
+
+/* 急停：紅色，稍微小一點字避免太搶畫面 */
+QPushButton#btnPEStop {
+    background-color: #c62828;
+    border: 2px solid #8e0000;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 15px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+QPushButton#btnPEStop:hover {
+    background-color: #d32f2f;
+}
+
+QPushButton#btnPEStop:pressed {
+    background-color: #8e0000;
+}
+
+/* 你可以在程式內動態切換 ON/OFF 的 styleSheet，例如： */
+/*  ON:  background-color: #00c853; */
+/*  OFF: background-color: #c62828; */
